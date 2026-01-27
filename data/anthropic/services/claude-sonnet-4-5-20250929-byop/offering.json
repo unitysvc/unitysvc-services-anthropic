@@ -1,0 +1,38 @@
+{
+  "currency": "USD",
+  "description": "Claude Sonnet 4 5 20250929 language model",
+  "details": {
+    "contextLength": 200000,
+    "litellm_provider": "anthropic",
+    "max_input_tokens": 200000,
+    "max_output_tokens": 64000,
+    "max_tokens": 64000,
+    "mode": "chat",
+    "object": "model",
+    "owned_by": "anthropic"
+  },
+  "display_name": "Claude Sonnet 4 5 20250929",
+  "name": "claude-sonnet-4-5-20250929",
+  "payout_price": {
+    "description": "Pricing Per 1M Tokens Input/Output",
+    "input": "3",
+    "output": "15",
+    "reference": null,
+    "type": "one_million_tokens"
+  },
+  "schema": "offering_v1",
+  "service_type": "llm",
+  "status": "ready",
+  "tags": [
+    "byop"
+  ],
+  "time_created": "2026-01-26T02:41:18.063Z",
+  "upstream_access_interfaces": {
+    "Anthropic API": {
+      "access_method": "http",
+      "api_key": "${ secrets.ANTHROPIC_API_KEY }",
+      "base_url": "https://api.anthropic.com/",
+      "rate_limits": []
+    }
+  }
+}

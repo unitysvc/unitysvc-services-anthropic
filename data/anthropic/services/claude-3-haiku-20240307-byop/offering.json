@@ -1,0 +1,38 @@
+{
+  "currency": "USD",
+  "description": "Claude 3 Haiku 20240307 language model",
+  "details": {
+    "contextLength": 200000,
+    "litellm_provider": "anthropic",
+    "max_input_tokens": 200000,
+    "max_output_tokens": 4096,
+    "max_tokens": 4096,
+    "mode": "chat",
+    "object": "model",
+    "owned_by": "anthropic"
+  },
+  "display_name": "Claude 3 Haiku 20240307",
+  "name": "claude-3-haiku-20240307",
+  "payout_price": {
+    "description": "Pricing Per 1M Tokens Input/Output",
+    "input": "0.25",
+    "output": "1.25",
+    "reference": null,
+    "type": "one_million_tokens"
+  },
+  "schema": "offering_v1",
+  "service_type": "llm",
+  "status": "ready",
+  "tags": [
+    "byop"
+  ],
+  "time_created": "2026-01-26T02:41:18.068Z",
+  "upstream_access_interfaces": {
+    "Anthropic API": {
+      "access_method": "http",
+      "api_key": "${ secrets.ANTHROPIC_API_KEY }",
+      "base_url": "https://api.anthropic.com/",
+      "rate_limits": []
+    }
+  }
+}

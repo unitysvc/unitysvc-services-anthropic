@@ -1,0 +1,17 @@
+import os
+import anthropic
+
+client = anthropic.Anthropic(
+    api_key=os.getenv("API_KEY"),
+    base_url=os.getenv("base_url")
+)
+
+message = client.messages.create(
+    model="{{offering.name}}",
+    max_tokens=200,
+    messages=[
+        {"role": "user", "content": "Say this is a test"}
+    ]
+)
+
+print(message.content[0].text)

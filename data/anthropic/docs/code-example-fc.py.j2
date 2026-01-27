@@ -1,0 +1,46 @@
+import os
+import json
+import anthropic
+
+client = anthropic.Anthropic(
+    api_key=os.environ.get("API_KEY"),
+    base_url=os.environ.get("base_url")
+)
+
+def echo_message(message):
+    return f"Echo: {message}"
+
+# send message to Claude
+response = client.messages.create(
+    model="{{offering.name}}",
+    max_tokens=300,
+    tools=[
+        {
+            "name": "echo_message",
+            "description": "Echoes back the given message",
+            "input_schema": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "description": "The message to echo"
+                    }
+                },
+                "required": ["message"]
+            }
+        }
+    ],
+    messages=[
+        {"role": "user", "content": "This is a test"}
+    ]
+)
+
+message = response.content[0]
+
+if message.type == "tool_use":
+    if message.name == "echo_message":
+        args = message.input
+        result = echo_message(args["message"])
+        print(result)
+else:
+    print(message.text if hasattr(message, "text") else "⚠️ No content returned from model.")
