@@ -1,22 +1,22 @@
 {
   "currency": "USD",
-  "description": "Claude Opus 4 1 20250805 language model",
+  "description": "Claude Opus 4 6 language model",
   "details": {
-    "contextLength": 200000,
+    "contextLength": 1000000,
     "litellm_provider": "anthropic",
-    "max_input_tokens": 200000,
-    "max_output_tokens": 32000,
-    "max_tokens": 32000,
+    "max_input_tokens": 1000000,
+    "max_output_tokens": 128000,
+    "max_tokens": 128000,
     "mode": "chat",
     "object": "model",
     "owned_by": "anthropic"
   },
-  "display_name": "Claude Opus 4 1 20250805",
-  "name": "claude-opus-4-1-20250805",
+  "display_name": "Claude Opus 4 6",
+  "name": "claude-opus-4-6",
   "payout_price": {
     "description": "Pricing Per 1M Tokens Input/Output",
-    "input": "15",
-    "output": "75",
+    "input": "5",
+    "output": "25",
     "reference": null,
     "type": "one_million_tokens"
   },
@@ -26,7 +26,7 @@
   "tags": [
     "byop"
   ],
-  "time_created": "2026-01-26T02:41:18.064Z",
+  "time_created": "2026-02-08T18:34:37.728441Z",
   "upstream_access_interfaces": {
     "Anthropic API": {
       "access_method": "http",

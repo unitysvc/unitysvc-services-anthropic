@@ -43,8 +43,8 @@
   },
   "list_price": {
     "description": "Pricing Per 1M Tokens Input/Output",
-    "input": "3",
-    "output": "15",
+    "input": "5",
+    "output": "25",
     "reference": null,
     "type": "one_million_tokens"
   },
@@ -55,7 +55,7 @@
     }
   },
   "status": "ready",
-  "time_created": "2026-01-26T02:41:18.066Z",
+  "time_created": "2026-02-08T18:34:37.728847Z",
   "user_access_interfaces": {
     "Provider API": {
       "access_method": "http",

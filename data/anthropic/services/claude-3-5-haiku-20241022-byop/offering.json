@@ -30,7 +30,6 @@
   "upstream_access_interfaces": {
     "Anthropic API": {
       "access_method": "http",
-      "api_key": "${ secrets.ANTHROPIC_API_KEY }",
       "base_url": "https://api.anthropic.com/",
       "rate_limits": []
     }
