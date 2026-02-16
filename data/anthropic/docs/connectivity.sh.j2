@@ -1,0 +1,10 @@
+curl https://api.anthropic.com/v1/messages \
+  -H "x-api-key: $UNITYSVC_API_KEY" \
+  -H "content-type: application/json" \
+  -d '{
+    "model": "{{offering.name}}",
+    "max_tokens": 200,
+    "messages": [
+      {"role": "user", "content": "Say this is a test"}
+    ]
+  }'
