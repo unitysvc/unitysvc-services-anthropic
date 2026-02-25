@@ -1,17 +1,36 @@
 import os
-import anthropic
+import requests
+import json
 
-client = anthropic.Anthropic(
-    api_key=os.getenv("UNITYSVC_API_KEY"),
-    base_url=os.getenv("UNITYSVC_BASE_URL")
-)
+API_KEY = os.getenv("UNITYSVC_API_KEY")
+BASE_URL = os.getenv("UNITYSVC_BASE_URL")  # e.g. https://api.anthropic.com
 
-message = client.messages.create(
-    model="{{offering.name}}",
-    max_tokens=200,
-    messages=[
-        {"role": "user", "content": "Say this is a test"}
+url = f"{BASE_URL}/v1/messages"
+
+headers = {
+    "x-api-key": API_KEY,
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+}
+
+payload = {
+    "model": "{{offering.name}}",  # replace with your actual model
+    "max_tokens": 200,
+    "messages": [
+        {
+            "role": "user",
+            "content": "Say this is a test"
+        }
     ]
-)
+}
 
-print(message.content[0].text)
+response = requests.post(url, headers=headers, json=payload)
+
+print("Status Code:", response.status_code)
+print("Raw Response:", response.text)
+
+if response.status_code == 200:
+    data = response.json()
+    print(data["content"][0]["text"])
+else:
+    print("Request failed.")
