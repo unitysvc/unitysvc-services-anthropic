@@ -1,32 +1,34 @@
 {
   "currency": "USD",
-  "description": "Claude Opus 4 20250514 language model",
+  "description": "Claude 3 5 Haiku 20241022 language model",
   "details": {
     "contextLength": 200000,
     "litellm_provider": "anthropic",
     "max_input_tokens": 200000,
-    "max_output_tokens": 32000,
-    "max_tokens": 32000,
+    "max_output_tokens": 8192,
+    "max_tokens": 8192,
     "mode": "chat",
     "object": "model",
     "owned_by": "anthropic"
   },
-  "display_name": "Claude Opus 4 20250514",
-  "name": "claude-opus-4-20250514",
+  "display_name": "Claude 3 5 Haiku 20241022",
+  "name": "claude-3-5-haiku-20241022",
   "payout_price": {
     "description": "Pricing Per 1M Tokens Input/Output",
-    "input": "15",
-    "output": "75",
+    "input": "0.7999999999999999",
+    "output": "4",
     "reference": null,
     "type": "one_million_tokens"
   },
   "schema": "offering_v1",
   "service_type": "llm",
-  "status": "ready",
+  "status": "deprecated",
   "tags": [
-    "byop"
+    "ai",
+    "gateway",
+    "byok"
   ],
-  "time_created": "2026-01-26T02:41:18.065Z",
+  "time_created": "2026-01-26T02:41:18.067Z",
   "upstream_access_interfaces": {
     "Anthropic API": {
       "access_method": "http",

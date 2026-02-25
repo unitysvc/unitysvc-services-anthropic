@@ -1,6 +1,6 @@
 {
   "currency": "USD",
-  "description": "Claude Opus 4 5 20251101 language model",
+  "description": "Claude 3 7 Sonnet 20250219 language model",
   "details": {
     "contextLength": 200000,
     "litellm_provider": "anthropic",
@@ -11,22 +11,24 @@
     "object": "model",
     "owned_by": "anthropic"
   },
-  "display_name": "Claude Opus 4 5 20251101",
-  "name": "claude-opus-4-5-20251101",
+  "display_name": "Claude 3 7 Sonnet 20250219",
+  "name": "claude-3-7-sonnet-20250219",
   "payout_price": {
     "description": "Pricing Per 1M Tokens Input/Output",
-    "input": "5",
-    "output": "25",
+    "input": "3",
+    "output": "15",
     "reference": null,
     "type": "one_million_tokens"
   },
   "schema": "offering_v1",
   "service_type": "llm",
-  "status": "ready",
+  "status": "deprecated",
   "tags": [
-    "byop"
+    "ai",
+    "gateway",
+    "byok"
   ],
-  "time_created": "2026-01-26T02:41:18.023Z",
+  "time_created": "2026-01-26T02:41:18.066Z",
   "upstream_access_interfaces": {
     "Anthropic API": {
       "access_method": "http",
