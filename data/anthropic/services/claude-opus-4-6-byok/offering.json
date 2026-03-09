@@ -33,6 +33,7 @@
     "Anthropic API": {
       "access_method": "http",
       "base_url": "https://api.anthropic.com/",
+      "api_key": "${ customer_secrets.ANTHROPIC_API_KEY }",
       "rate_limits": []
     }
   }
