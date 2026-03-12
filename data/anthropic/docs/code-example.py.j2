@@ -14,7 +14,7 @@ headers = {
 }
 
 payload = {
-    "model": "{{offering.name}}",  # replace with your actual model
+    "model": os.environ.get("MODEL", "{{offering.name}}"),  # replace with your actual model
     "max_tokens": 200,
     "messages": [
         {

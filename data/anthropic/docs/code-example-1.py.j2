@@ -12,7 +12,7 @@ headers = {
 }
 
 payload = {
-    "model": "{{offering.name}}",   # replace if needed
+    "model": os.environ.get("MODEL", "{{offering.name}}"),   # replace if needed
     "max_tokens": 200,
     "messages": [
         {"role": "user", "content": "Say this is a test"}
