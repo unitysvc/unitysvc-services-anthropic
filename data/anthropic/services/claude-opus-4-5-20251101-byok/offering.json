@@ -1,4 +1,7 @@
 {
+  "capabilities": [
+    "llm"
+  ],
   "currency": "USD",
   "description": "Claude Opus 4 5 20251101 language model",
   "details": {
@@ -14,10 +17,10 @@
   "display_name": "Claude Opus 4 5 20251101",
   "name": "claude-opus-4-5-20251101",
   "payout_price": {
-    "description": "Pricing Per 1M Tokens Input/Output",
-    "input": "5",
-    "output": "25",
-    "reference": null,
+    "cached_input": "0",
+    "description": "Service provider charges $5 / $25 / $0.5 per 1M input/output/cached tokens",
+    "input": "0",
+    "output": "0",
     "type": "one_million_tokens"
   },
   "schema": "offering_v1",
@@ -32,9 +35,12 @@
   "upstream_access_interfaces": {
     "Anthropic API": {
       "access_method": "http",
-      "base_url": "https://api.anthropic.com/",
       "api_key": "${ customer_secrets.ANTHROPIC_API_KEY }",
-      "rate_limits": []
+      "base_url": "https://api.anthropic.com/",
+      "rate_limits": [],
+      "routing_key": {
+        "model": "claude-opus-4-5-20251101"
+      }
     }
   }
 }

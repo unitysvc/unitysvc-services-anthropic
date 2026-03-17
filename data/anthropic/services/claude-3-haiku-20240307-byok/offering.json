@@ -1,4 +1,7 @@
 {
+  "capabilities": [
+    "llm"
+  ],
   "currency": "USD",
   "description": "Claude 3 Haiku 20240307 language model",
   "details": {
@@ -14,10 +17,10 @@
   "display_name": "Claude 3 Haiku 20240307",
   "name": "claude-3-haiku-20240307",
   "payout_price": {
-    "description": "Pricing Per 1M Tokens Input/Output",
-    "input": "0.25",
-    "output": "1.25",
-    "reference": null,
+    "cached_input": "0",
+    "description": "Service provider charges $0.25 / $1.25 / $0.03 per 1M input/output/cached tokens",
+    "input": "0",
+    "output": "0",
     "type": "one_million_tokens"
   },
   "schema": "offering_v1",
@@ -32,9 +35,12 @@
   "upstream_access_interfaces": {
     "Anthropic API": {
       "access_method": "http",
-      "base_url": "https://api.anthropic.com/",
       "api_key": "${ customer_secrets.ANTHROPIC_API_KEY }",
-      "rate_limits": []
+      "base_url": "https://api.anthropic.com/",
+      "rate_limits": [],
+      "routing_key": {
+        "model": "claude-3-haiku-20240307"
+      }
     }
   }
 }
