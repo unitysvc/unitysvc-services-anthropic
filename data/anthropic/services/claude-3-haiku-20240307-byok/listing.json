@@ -70,7 +70,7 @@
   "user_access_interfaces": {
     "Provider API": {
       "access_method": "http",
-      "base_url": "${GATEWAY_BASE_URL}/p/anthropic",
+      "base_url": "${API_GATEWAY_BASE_URL}/p/anthropic",
       "routing_key": {
         "model": "claude-3-haiku-20240307"
       }
