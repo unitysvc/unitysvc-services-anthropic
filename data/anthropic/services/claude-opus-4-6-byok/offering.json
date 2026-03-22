@@ -32,7 +32,7 @@
     "byok"
   ],
   "time_created": "2026-02-08T18:34:37.728441Z",
-  "upstream_access_interfaces": {
+  "upstream_access_config": {
     "Anthropic API": {
       "access_method": "http",
       "api_key": "${ customer_secrets.ANTHROPIC_API_KEY }",
