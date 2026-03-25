@@ -10,9 +10,7 @@
     "max_input_tokens": 1000000,
     "max_output_tokens": 64000,
     "max_tokens": 64000,
-    "mode": "chat",
-    "object": "model",
-    "owned_by": "anthropic"
+    "mode": "chat"
   },
   "display_name": "Claude Sonnet 4 20250514",
   "name": "claude-sonnet-4-20250514",
