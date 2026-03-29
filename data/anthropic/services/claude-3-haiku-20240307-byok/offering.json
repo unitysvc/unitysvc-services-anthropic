@@ -10,9 +10,7 @@
     "max_input_tokens": 200000,
     "max_output_tokens": 4096,
     "max_tokens": 4096,
-    "mode": "chat",
-    "object": "model",
-    "owned_by": "anthropic"
+    "mode": "chat"
   },
   "display_name": "Claude 3 Haiku 20240307",
   "name": "claude-3-haiku-20240307",
