@@ -122,7 +122,11 @@ def main() -> None:
             after = json.dumps(details, sort_keys=True)
             if before != after:
                 with path.open("w") as f:
-                    json.dump(offering, f, indent=2, ensure_ascii=False)
+                    # sort_keys matches the canonical ordering enforced by
+                    # ``usvc_seller data format``; without it the rewrite
+                    # leaves keys in insertion order and CI's format check
+                    # rejects the diff.
+                    json.dump(offering, f, indent=2, ensure_ascii=False, sort_keys=True)
                     f.write("\n")
                 changed += 1
                 print(
