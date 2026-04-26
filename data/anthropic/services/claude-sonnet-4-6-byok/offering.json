@@ -31,7 +31,7 @@
   ],
   "time_created": "2026-02-18T23:16:14.811798Z",
   "upstream_access_config": {
-    "anthropic_api": {
+    "Anthropic API": {
       "access_method": "http",
       "api_key": "${ customer_secrets.ANTHROPIC_API_KEY }",
       "base_url": "https://api.anthropic.com/",

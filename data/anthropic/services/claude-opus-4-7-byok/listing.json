@@ -59,20 +59,20 @@
   },
   "list_price": {
     "cached_input": "0",
-    "description": "Service provider charges $0.25 / $1.25 / $0.03 per 1M input/output/cached tokens",
+    "description": "Service provider charges $5 / $25 / $0.5 per 1M input/output/cached tokens",
     "input": "0",
     "output": "0",
     "type": "one_million_tokens"
   },
   "schema": "listing_v1",
   "status": "ready",
-  "time_created": "2026-01-26T02:41:18.068Z",
+  "time_created": "2026-04-26T03:45:42.901832Z",
   "user_access_interfaces": {
     "provider_api": {
       "access_method": "http",
       "base_url": "${API_GATEWAY_BASE_URL}/p/anthropic",
       "routing_key": {
-        "model": "claude-3-haiku-20240307"
+        "model": "claude-opus-4-7"
       }
     }
   }
