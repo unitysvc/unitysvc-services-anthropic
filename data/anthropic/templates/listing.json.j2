@@ -14,19 +14,13 @@
   },
   "documents": {
     "How to use this model": {
-      "category": "getting_started",
-      "file_path": "../../docs/description.md",
-      "is_active": true,
-      "is_public": true,
-      "mime_type": "markdown"
+      "$doc_preset": "llm_description"
     },
     "Python code example": {
-      "category": "code_example",
-      "description": "Example code to use the model",
-      "file_path": "../../docs/code-example.py.j2",
-      "is_active": true,
-      "is_public": true,
-      "mime_type": "python"
+      "$doc_preset": {
+        "name": "llm_code_example_anthropic",
+        "description": "Example code to use the model"
+      }
     },
     "Python function calling code example": {
       "category": "code_example",
@@ -61,12 +55,10 @@
       "mime_type": "bash"
     },
     "Default request body": {
-          "category": "request_template",
-          "description": "Default request body for the playground",
-          "file_path": "../../docs/request-template.json",
-          "is_active": true,
-          "is_public": true,
-          "mime_type": "json"
+      "$doc_preset": {
+        "name": "llm_request_template",
+        "description": "Default request body for the playground"
+      }
     }
   }
 }
