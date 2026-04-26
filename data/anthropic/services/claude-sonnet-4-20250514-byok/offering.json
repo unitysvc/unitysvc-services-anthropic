@@ -5,12 +5,13 @@
   "currency": "USD",
   "description": "Claude Sonnet 4 20250514 language model",
   "details": {
-    "contextLength": 1000000,
     "litellm_provider": "anthropic",
     "max_input_tokens": 1000000,
     "max_output_tokens": 64000,
     "max_tokens": 64000,
-    "mode": "chat"
+    "mode": "chat",
+    "context_length": 1000000,
+    "parameter_count": null
   },
   "display_name": "Claude Sonnet 4 20250514",
   "name": "claude-sonnet-4-20250514",

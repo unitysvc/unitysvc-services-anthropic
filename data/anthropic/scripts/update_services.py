@@ -74,17 +74,18 @@ class ModelSource:
         # Build details from LiteLLM data and model info
         details = {}
         model_data = ModelDataLookup.lookup_model_details(
-            model_id, self.litellm_data or {})
+            model_id, self.litellm_data or {}
+        )
 
         if model_data:
             for field in [
-                    "max_tokens", "max_input_tokens", "max_output_tokens",
-                    "mode"
+                "max_tokens",
+                "max_input_tokens",
+                "max_output_tokens",
+                "mode",
             ]:
                 if field in model_data:
                     details[field] = model_data[field]
-            if "max_input_tokens" in model_data:
-                details["contextLength"] = model_data["max_input_tokens"]
             if "litellm_provider" in model_data:
                 details["litellm_provider"] = model_data["litellm_provider"]
 
@@ -93,14 +94,33 @@ class ModelSource:
         if "object" in model_info:
             details["object"] = model_info["object"]
 
+        # Canonical (snake_case) metadata required by the platform validator
+        # for LLM offerings.  Both keys must be present; null asserts
+        # "unknown".  Claude models are closed-source so parameter_count
+        # is permanently null per the canonical helper.  metadata_sources
+        # records provenance so reviewers can triage stale-value reports.
+        canonical = ModelDataLookup.get_canonical_metadata(
+            model_id,
+            fetcher=self.data_fetcher,
+        )
+        details["context_length"] = canonical["context_length"]
+        details["parameter_count"] = canonical["parameter_count"]
+        if canonical["sources"]:
+            details["metadata_sources"] = canonical["sources"]
+
         # Extract upstream pricing for description, but set prices to 0 for BYOK
         pricing = None
         if model_data:
-            if "input_cost_per_token" in model_data and "output_cost_per_token" in model_data:
-                input_price = round(float(
-                    model_data["input_cost_per_token"]) * 1_000_000, 4)
-                output_price = round(float(
-                    model_data["output_cost_per_token"]) * 1_000_000, 4)
+            if (
+                "input_cost_per_token" in model_data
+                and "output_cost_per_token" in model_data
+            ):
+                input_price = round(
+                    float(model_data["input_cost_per_token"]) * 1_000_000, 4
+                )
+                output_price = round(
+                    float(model_data["output_cost_per_token"]) * 1_000_000, 4
+                )
                 price_desc = (
                     f"Service provider charges "
                     f"${self._format_price(input_price)} / "
@@ -115,8 +135,9 @@ class ModelSource:
                 }
                 # Include cached_input if available
                 if "cache_read_input_token_cost" in model_data:
-                    cached_price = round(float(
-                        model_data["cache_read_input_token_cost"]) * 1_000_000, 4)
+                    cached_price = round(
+                        float(model_data["cache_read_input_token_cost"]) * 1_000_000, 4
+                    )
                     pricing["cached_input"] = "0"
                     price_desc = (
                         f"Service provider charges "
