@@ -20,7 +20,9 @@ from unitysvc_sellers.template_populate import populate_from_iterator
 # Provider Configuration
 PROVIDER_NAME = "anthropic"
 PROVIDER_DISPLAY_NAME = "Anthropic"
-API_BASE_URL = "https://api.anthropic.com/"
+# No trailing slash — preset templates append paths starting with ``/``,
+# so a trailing slash here yields ``//v1/messages`` and Anthropic 404s.
+API_BASE_URL = "https://api.anthropic.com"
 ENV_API_KEY_NAME = "ANTHROPIC_API_KEY"
 
 SCRIPT_DIR = Path(__file__).parent
